@@ -1,10 +1,7 @@
+import { getTiles } from '@/lib/tiles';
 import TileCard from '@/app/component/TileCard';
 import React from 'react';
 
-const getTiles = async () => {
-    const res = await fetch("http://localhost:5000/tiles");
-    return res.json();
-}
 
 const AllTiles = async() => {
     const tiles = await getTiles();

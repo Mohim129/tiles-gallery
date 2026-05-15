@@ -1,25 +1,8 @@
-// components/FeaturedTiles.jsx
+import { getFeaturedTiles } from "@/lib/tiles";
 import TileCard from "./TileCard";
 
-async function getFeaturedTiles() {
-  const ids = ["tile_005", "tile_010", "tile_015", "tile_020"];
+// The getFeaturedTiles function is now imported from @/lib/tiles
 
-  try {
-    const tilePromises = ids.map(async (id) => {
-      const res = await fetch(`http://localhost:5000/tiles/${id}`, {
-        cache: "no-store",
-      });
-      if (!res.ok) return null;
-      return await res.json();
-    });
-
-    const tiles = await Promise.all(tilePromises);
-    return tiles.filter((tile) => tile !== null);
-  } catch (error) {
-    console.error("Failed to fetch featured tiles:", error);
-    return [];
-  }
-}
 
 const FeaturedTiles = async () => {
      const tiles = await getFeaturedTiles();
