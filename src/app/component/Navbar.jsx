@@ -93,8 +93,16 @@ const Navbar = () => {
           </div>
           <div className="navbar-end">
             {user ? (
-              <div className="flex items-center gap-4">
-                <span>{user.name}</span>
+              <div  className="flex items-center gap-4">
+                <Link href={"/my-profile"}>
+                  <span>{user.name}</span>
+                </Link>
+                <Link href={"/my-profile"} className="avatar">
+                  <div className="w-24 rounded-full">
+                    <img src={user.image} alt="User Avatar" />
+                  </div>
+                </Link>
+
                 <button className="btn btn-ghost" onClick={() => signOut()}>
                   Logout
                 </button>
