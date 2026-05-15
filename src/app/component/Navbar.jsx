@@ -94,9 +94,9 @@ const Navbar = () => {
           <div className="navbar-end">
             {user ? (
               <div  className="flex items-center gap-4">
-                <Link href={"/my-profile"}>
+                {/* <Link href={"/my-profile"}>
                   <span>{user.name}</span>
-                </Link>
+                </Link> */}
                 <Link href={"/my-profile"} className="avatar">
                   <div className="w-24 rounded-full">
                     <img src={user.image} alt="User Avatar" />
