@@ -10,7 +10,7 @@ const Navbar = () => {
   if(isPending){
     return <div>Loading...</div>
   }
-  console.log("loging session", data)
+  // console.log("loging session", data)
   const user = data?.user;
     return (
       <nav>
@@ -48,7 +48,7 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href={"/tiles"} className="btn">
+                  <Link href={"/all-tiles"} className="btn">
                     Tiles
                   </Link>
                 </li>
@@ -63,7 +63,9 @@ const Navbar = () => {
                 </li>
               </ul>
             </div>
-            <a className="btn btn-ghost text-xl">Tiles Gallery</a>
+            <Link href={"/"} className="btn btn-ghost text-xl">
+              Tiles Gallery
+            </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
@@ -73,7 +75,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link href={"/tiles"} className="btn">
+                <Link href={"/all-tiles"} className="btn">
                   Tiles
                 </Link>
               </li>

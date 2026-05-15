@@ -20,7 +20,7 @@ const MyProfilePage = async() => {
         );
     }
 
-    console.log("Session data:", session);
+    // console.log("Session data:", session);
     return (
         <div>
             <h1>My Profile</h1>

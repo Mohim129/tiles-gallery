@@ -39,7 +39,7 @@ const SignUpPage = () => {
     if (data) {
       alert("Sign up successful!");
     }
-    console.log("Sign up response:", { data, error })
+    // console.log("Sign up response:", { data, error })
     
   };
     return (
