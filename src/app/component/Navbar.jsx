@@ -1,7 +1,17 @@
+"use client";
+
+
+import { signOut, useSession } from '@/lib/auth-client';
 import Link from 'next/link';
 import React from 'react';
 
 const Navbar = () => {
+  const { data, isPending} = useSession();
+  if(isPending){
+    return <div>Loading...</div>
+  }
+  console.log("loging session", data)
+  const user = data?.user;
     return (
       <nav>
         <div className="navbar bg-base-100 shadow-sm">
@@ -33,21 +43,23 @@ const Navbar = () => {
                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
               >
                 <li>
-                  <a>Item 1</a>
+                  <Link href={"/"} className="btn">
+                    Home
+                  </Link>
                 </li>
                 <li>
-                  <a>Parent</a>
-                  <ul className="p-2">
-                    <li>
-                      <a>Submenu 1</a>
-                    </li>
-                    <li>
-                      <a>Submenu 2</a>
-                    </li>
-                  </ul>
+                  <Link href={"/tiles"} className="btn">
+                    Tiles
+                  </Link>
                 </li>
                 <li>
-                  <a>Item 3</a>
+                  {user ? (
+                    <Link href={"/my-profile"} className="btn">
+                      My Profile
+                    </Link>
+                  ) : (
+                    ""
+                  )}
                 </li>
               </ul>
             </div>
@@ -56,28 +68,40 @@ const Navbar = () => {
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
               <li>
-                <a>Item 1</a>
+                <Link href={"/"} className="btn">
+                  Home
+                </Link>
               </li>
               <li>
-                <details>
-                  <summary>Parent</summary>
-                  <ul className="p-2 bg-base-100 w-40 z-1">
-                    <li>
-                      <a>Submenu 1</a>
-                    </li>
-                    <li>
-                      <a>Submenu 2</a>
-                    </li>
-                  </ul>
-                </details>
+                <Link href={"/tiles"} className="btn">
+                  Tiles
+                </Link>
               </li>
+
               <li>
-                <a>Item 3</a>
+                {user ? (
+                  <Link href={"/my-profile"} className="btn">
+                    My Profile
+                  </Link>
+                ) : (
+                  ""
+                )}
               </li>
             </ul>
           </div>
           <div className="navbar-end">
-            <Link href={"/signin"} className="btn">Login</Link>
+            {user ? (
+              <div className="flex items-center gap-4">
+                <span>{user.name}</span>
+                <button className="btn btn-ghost" onClick={() => signOut()}>
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <Link href={"/signin"} className="btn">
+                Login
+              </Link>
+            )}
           </div>
         </div>
       </nav>

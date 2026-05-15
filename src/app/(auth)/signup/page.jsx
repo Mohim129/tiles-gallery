@@ -14,6 +14,7 @@ import {
   TextArea,
   TextField,
 } from "@heroui/react";
+import Link from "next/link";
 
 const SignUpPage = () => {
     const onSubmit = async (e) => {
@@ -29,7 +30,8 @@ const SignUpPage = () => {
         name:userData.name,
         email: userData.email,
         password: userData.password,
-        callbackURL: '/'
+        callbackURL: '/signin',
+        image: userData.image
     })
     if (error) {
       alert("Error signing up: " + error.message);
@@ -42,9 +44,13 @@ const SignUpPage = () => {
   };
     return (
       <div>
-        <h1>Sign Up</h1>
-        <Form className="flex w-96 flex-col gap-4" onSubmit={onSubmit}>
+        <Form
+          className="flex justify-center items-center h-screen flex-col gap-4"
+          onSubmit={onSubmit}
+        >
+          <h1>Sign Up</h1>
           <TextField
+            className="w-full max-w-[280px]"
             isRequired
             name="name"
             validate={(value) => {
@@ -59,6 +65,7 @@ const SignUpPage = () => {
             <FieldError />
           </TextField>
           <TextField
+            className="w-full max-w-[280px]"
             isRequired
             name="email"
             type="email"
@@ -74,6 +81,23 @@ const SignUpPage = () => {
             <FieldError />
           </TextField>
           <TextField
+            className="w-full max-w-[280px]"
+            isRequired
+            name="image"
+            type="url"
+            validate={(value) => {
+              if (!/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/i.test(value)) {
+                return "Please enter a valid image URL";
+              }
+              return null;
+            }}
+          >
+            <Label>Image URL</Label>
+            <Input name="image" placeholder="https://example.com/image.jpg" />
+            <FieldError />
+          </TextField>
+          <TextField
+            className="w-full max-w-[280px]"
             isRequired
             minLength={8}
             name="password"
@@ -107,6 +131,12 @@ const SignUpPage = () => {
               Reset
             </Button>
           </div>
+          <Description className="text-sm">
+                    Already have an account?{" "}
+                    <Link href="/signin" className="text-blue-500 hover:underline">
+                      Sign in here
+                    </Link>
+                  </Description>
         </Form>
       </div>
     );
