@@ -13,6 +13,6 @@ export const auth = betterAuth({
   database: mongodbAdapter(db, {
     client,
   }),
-  secret: process.env.BETTER_AUTH_SECRET || "fallback-secret-for-build-only",
-  baseURL: process.env.BETTER_AUTH_URL || "http://localhost:3000"
+  secret: process.env.BETTER_AUTH_SECRET,
+  baseURL: process.env.BETTER_AUTH_URL
 });
