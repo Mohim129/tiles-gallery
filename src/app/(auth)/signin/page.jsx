@@ -33,13 +33,16 @@ const SignInPage = () => {
             email: userData.email,
             password: userData.password,
             rememberMe: true,
-            callbackURL: '/'
+            // callbackURL: '/'
         })
         if (error) {
           toast.error("Error signing in: " + error.message);
           }
         if (data) {
           toast.success("Sign in successful!");
+          setTimeout(() => {
+            window.location.href = "/"; 
+          }, 1500);
         }    
     };
 

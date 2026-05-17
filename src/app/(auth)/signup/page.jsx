@@ -15,14 +15,17 @@ import {
   TextField,
 } from "@heroui/react";
 import Link from "next/link";
+// import { useRouter } from "next/router";
 import toast from "react-hot-toast";
 
 const SignUpPage = () => {
+  // const router = useRouter(); 
     const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const userData = Object.fromEntries(formData.entries());
 
+    
 
     if (userData.name.length < 3) return;
     if (userData.password.length < 8) return;
@@ -31,14 +34,17 @@ const SignUpPage = () => {
         name:userData.name,
         email: userData.email,
         password: userData.password,
+        image: userData.image,
         callbackURL: '/signin',
-        image: userData.image
     })
     if (error) {
       toast.error("Error signing up: " + error.message);
       }
     if (data) {
       toast.success("Sign up successful!");
+      setTimeout(() => {
+        window.location.href = "/signin";
+      }, 1500);
     }
   
     
