@@ -13,8 +13,7 @@ export const auth = betterAuth({
   database: mongodbAdapter(db, {
     client,
   }),
-  secret: process.env.BETTER_AUTH_SECRET,
-  baseURL: process.env.BETTER_AUTH_URL,
+
 
   socialProviders: {
         google: { 
@@ -24,3 +23,6 @@ export const auth = betterAuth({
     },
 
 });
+
+  // secret: process.env.BETTER_AUTH_SECRET,
+  // baseURL: process.env.BETTER_AUTH_URL,
