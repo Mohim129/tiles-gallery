@@ -2,13 +2,14 @@ import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import Link from "next/link";
 import React from "react";
+import toast from "react-hot-toast";
 
 const MyProfilePage = async () => {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
   const user = session?.user;
-
+  
   if (!user) {
     return (
       <div className="flex justify-center items-center h-screen flex-col gap-4">
@@ -33,9 +34,9 @@ const MyProfilePage = async () => {
         <div className="card bg-base-200 shadow-xl">
           <div className="card-body items-center text-center">
             <div href={"/my-profile"} className="">
-              <div className="w-60 rounded-2xl">
+              <div className=" rounded-2xl">
                 <img
-                  className="rounded-2xl"
+                  className=" max-w-60 rounded-2xl"
                   src={user.image}
                   alt="User Avatar"
                 />

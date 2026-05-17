@@ -1,9 +1,11 @@
+
 import { getFeaturedTiles } from "@/lib/tiles";
-import TileCard from "./TileCard";
 
-// The getFeaturedTiles function is now imported from @/lib/tiles
-
-
+import Link from "next/link";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import FeaturedTilesClient from "./FeaturedTilesClient";
 const FeaturedTiles = async () => {
      const tiles = await getFeaturedTiles();
     console.log(tiles);
@@ -29,28 +31,16 @@ const FeaturedTiles = async () => {
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {tiles.map((tile) => (
-              <TileCard key={tile.id} tile={tile} />
-            ))}
-          </div>
+          <FeaturedTilesClient tiles={tiles} />
         )}
         <div className="text-center mt-10">
-          <a href="/all-tiles" className="btn btn-outline btn-primary btn-wide">
+          <Link
+            href="/all-tiles"
+            className="btn btn-outline btn-primary btn-wide"
+          >
             View All Tiles
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 ml-2"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </a>
+            
+          </Link>
         </div>
       </div>
     </section>

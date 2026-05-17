@@ -1,3 +1,4 @@
+
 import { auth } from '@/lib/auth';
 import { getTileById } from '@/lib/tiles';
 import { headers } from 'next/headers';
@@ -10,16 +11,19 @@ const TileDetails = async({ params }) => {
         headers: await headers()
     })
     const user = session?.user;
-
-    if (!user) {
-    
-        return (
-            <div>
-                <h1>You are not logged in</h1>
-                <h4>Click Here to <Link href="/signin" className='text-blue-400'>Login</Link></h4>
-            </div>
-        );
-    }
+  if (!user) {
+    return (
+      <div className="flex justify-center items-center h-screen flex-col gap-4">
+        <h1 className="text-2xl font-bold">You are not logged in</h1>
+        <h4>
+          Click Here to{" "}
+          <Link href="/signin" className="text-blue-400">
+            Login
+          </Link>
+        </h4>
+      </div>
+    );
+  }
 
     const { tileId } = await params;
     console.log("Tile info:", tileId);
@@ -45,7 +49,7 @@ const TileDetails = async({ params }) => {
               </div>
 
               <div className="lg:w-1/2 flex flex-col justify-center space-y-6">
-                <h1 className="text-4xl font-extrabold text-primary">
+                <h1 className="text-4xl font-extrabold text-[#6d4fc9]">
                   {tile.title}
                 </h1>
 
@@ -85,21 +89,20 @@ const TileDetails = async({ params }) => {
                 <div>
                   <h4 className="font-semibold mb-2">Tags</h4>
                   <div className="flex flex-wrap gap-2">
-                    {/* {tags.map((tag) => (
+                    {tile.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="badge badge-outline badge-primary"
+                        className="badge badge-outline text-[#6d4fc9]"
                       >
                         {tag}
                       </span>
-                    ))} */}
+                    ))}
                   </div>
                 </div>
 
-
                 <Link
                   href="/all-tiles"
-                  className="btn btn-outline btn-primary mt-4"
+                  className="btn btn-outline bg-[#6d4fc9] text-white mt-4"
                 >
                   ← Back to Gallery
                 </Link>

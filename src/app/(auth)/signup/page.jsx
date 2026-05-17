@@ -15,6 +15,7 @@ import {
   TextField,
 } from "@heroui/react";
 import Link from "next/link";
+import toast from "react-hot-toast";
 
 const SignUpPage = () => {
     const onSubmit = async (e) => {
@@ -34,12 +35,12 @@ const SignUpPage = () => {
         image: userData.image
     })
     if (error) {
-      alert("Error signing up: " + error.message);
+      toast.error("Error signing up: " + error.message);
       }
     if (data) {
-      alert("Sign up successful!");
+      toast.success("Sign up successful!");
     }
-    // console.log("Sign up response:", { data, error })
+  
     
   };
     return (

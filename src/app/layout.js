@@ -1,6 +1,6 @@
-import { Geist, Geist_Mono, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
-import Navbar from "./component/Navbar";
+import { Toaster } from "react-hot-toast";
 
 
 const poppins = Poppins({
@@ -20,7 +20,10 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${poppins.variable} h-full antialiased`}
     >
-      <body className={`${poppins.className} min-h-full flex flex-col bg-background text-foreground`}>
+      <body
+        className={`${poppins.className} min-h-full flex flex-col bg-background text-foreground`}
+      >
+        <Toaster position="top-right" />
         <main>{children}</main>
       </body>
     </html>

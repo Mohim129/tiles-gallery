@@ -10,7 +10,8 @@
       "currency": "USD",
       "dimensions": "60x60 cm",
       "material": "Ceramic",
-      "inStock": true
+      "inStock": true,
+      "tags": ["Blue", "Kitchen", "Glossy", "Minimalist"]
     },
     {
       "id": "tile_002",
@@ -22,7 +23,8 @@
       "currency": "USD",
       "dimensions": "80x80 cm",
       "material": "Marble",
-      "inStock": true
+      "inStock": true,
+      "tags": ["Ivory", "Luxury", "Veined", "Living Room"]
     },
     {
       "id": "tile_003",
@@ -34,7 +36,8 @@
       "currency": "USD",
       "dimensions": "20x120 cm",
       "material": "Porcelain",
-      "inStock": false
+      "inStock": false,
+      "tags": ["Wood Effect", "Bathroom", "Durable", "Natural Look"]
     },
     {
       "id": "tile_004",
@@ -46,7 +49,8 @@
       "currency": "USD",
       "dimensions": "30x30 cm (sheet)",
       "material": "Glass",
-      "inStock": true
+      "inStock": true,
+      "tags": ["Seafoam", "Iridescent", "Mosaic", "Accent Wall"]
     },
     {
       "id": "tile_005",
@@ -58,7 +62,8 @@
       "currency": "USD",
       "dimensions": "25x25 cm",
       "material": "Terracotta",
-      "inStock": true
+      "inStock": true,
+      "tags": ["Terracotta", "Hexagon", "Rustic", "Handmade"]
     },
     {
       "id": "tile_006",
@@ -70,7 +75,8 @@
       "currency": "USD",
       "dimensions": "60x60 cm",
       "material": "Granite",
-      "inStock": true
+      "inStock": true,
+      "tags": ["Black", "Polished", "Elegant", "Durable"]
     },
     {
       "id": "tile_007",
@@ -82,7 +88,8 @@
       "currency": "USD",
       "dimensions": "20x20 cm",
       "material": "Cement",
-      "inStock": true
+      "inStock": true,
+      "tags": ["Vintage", "Geometric", "Navy", "Encaustic"]
     },
     {
       "id": "tile_008",
@@ -94,7 +101,8 @@
       "currency": "USD",
       "dimensions": "10x30 cm",
       "material": "Ceramic",
-      "inStock": false
+      "inStock": false,
+      "tags": ["Copper", "Subway", "Metallic", "Glossy"]
     },
     {
       "id": "tile_009",
@@ -106,7 +114,8 @@
       "currency": "USD",
       "dimensions": "75x75 cm",
       "material": "Quartzite",
-      "inStock": true
+      "inStock": true,
+      "tags": ["White", "Sparkle", "High-traffic", "Natural"]
     },
     {
       "id": "tile_010",
@@ -118,7 +127,8 @@
       "currency": "USD",
       "dimensions": "40x40 cm",
       "material": "Slate",
-      "inStock": true
+      "inStock": true,
+      "tags": ["Grey", "Textured", "Outdoor", "Patio"]
     },
     {
       "id": "tile_011",
@@ -130,7 +140,8 @@
       "currency": "USD",
       "dimensions": "30x30 cm (sheet)",
       "material": "Ceramic",
-      "inStock": true
+      "inStock": true,
+      "tags": ["Mint", "Penny Round", "Playful", "Refresh"]
     },
     {
       "id": "tile_012",
@@ -142,7 +153,8 @@
       "currency": "USD",
       "dimensions": "60x120 cm",
       "material": "Porcelain",
-      "inStock": true
+      "inStock": true,
+      "tags": ["Marble Look", "Affordable", "Elegant", "Large Format"]
     },
     {
       "id": "tile_013",
@@ -154,7 +166,8 @@
       "currency": "USD",
       "dimensions": "23x23 cm",
       "material": "Shell/Ceramic",
-      "inStock": false
+      "inStock": false,
+      "tags": ["Luxury", "Mother of Pearl", "Hexagon", "Iridescent"]
     },
     {
       "id": "tile_014",
@@ -166,7 +179,8 @@
       "currency": "USD",
       "dimensions": "50x50 cm",
       "material": "Travertine",
-      "inStock": true
+      "inStock": true,
+      "tags": ["Beige", "Tumbled", "Rustic", "Warm"]
     },
     {
       "id": "tile_015",
@@ -178,7 +192,8 @@
       "currency": "USD",
       "dimensions": "30x30 cm (sheet)",
       "material": "Glass/Stone",
-      "inStock": true
+      "inStock": true,
+      "tags": ["Navy", "Gold", "Arabesque", "Intricate"]
     },
     {
       "id": "tile_016",
@@ -190,7 +205,8 @@
       "currency": "USD",
       "dimensions": "60x60 cm",
       "material": "Limestone",
-      "inStock": true
+      "inStock": true,
+      "tags": ["Farmhouse", "Weathered", "Grey", "Rustic"]
     },
     {
       "id": "tile_017",
@@ -202,7 +218,8 @@
       "currency": "USD",
       "dimensions": "20x20 cm",
       "material": "Ceramic",
-      "inStock": true
+      "inStock": true,
+      "tags": ["Blue", "Hand-painted", "Traditional", "Pattern"]
     },
     {
       "id": "tile_018",
@@ -214,7 +231,8 @@
       "currency": "USD",
       "dimensions": "30x60 cm",
       "material": "Onyx",
-      "inStock": false
+      "inStock": false,
+      "tags": ["Honey", "Translucent", "Backlit", "Dramatic"]
     },
     {
       "id": "tile_019",
@@ -226,7 +244,8 @@
       "currency": "USD",
       "dimensions": "90x90 cm",
       "material": "Porcelain",
-      "inStock": true
+      "inStock": true,
+      "tags": ["Industrial", "Concrete Look", "Modern", "Minimalist"]
     },
     {
       "id": "tile_020",
@@ -238,7 +257,8 @@
       "currency": "USD",
       "dimensions": "15x15 cm",
       "material": "Glass",
-      "inStock": true
+      "inStock": true,
+      "tags": ["Pearl", "Iridescent", "Luminous", "Rainbow"]
     }
   ]
 }

@@ -4,13 +4,17 @@
 import { signOut, useSession } from '@/lib/auth-client';
 import Link from 'next/link';
 import React from 'react';
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const { data, isPending} = useSession();
   if(isPending){
-    return <div>Loading...</div>
+    return (
+      <div className="w-full flex justify-center items-center p-6" >
+        <span className="loading loading-spinner loading-xl"></span>
+      </div>
+    );
   }
-  // console.log("loging session", data)
   const user = data?.user;
     return (
       <nav>
@@ -63,26 +67,29 @@ const Navbar = () => {
                 </li>
               </ul>
             </div>
-            <Link href={"/"} className="btn btn-ghost text-xl">
+            <Link
+              href={"/"}
+              className="btn font-bold btn-ghost text-3xl text-[#6d4fc9]"
+            >
               Tiles Gallery
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
               <li>
-                <Link href={"/"} className="btn">
+                <Link href={"/"} className="">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href={"/all-tiles"} className="btn">
+                <Link href={"/all-tiles"} className="">
                   Tiles
                 </Link>
               </li>
 
               <li>
                 {user ? (
-                  <Link href={"/my-profile"} className="btn">
+                  <Link href={"/my-profile"} className="">
                     My Profile
                   </Link>
                 ) : (
@@ -93,7 +100,7 @@ const Navbar = () => {
           </div>
           <div className="navbar-end">
             {user ? (
-              <div  className="flex items-center gap-4">
+              <div className="flex items-center gap-4">
                 {/* <Link href={"/my-profile"}>
                   <span>{user.name}</span>
                 </Link> */}
@@ -103,7 +110,10 @@ const Navbar = () => {
                   </div>
                 </Link>
 
-                <button className="btn btn-ghost" onClick={() => signOut()}>
+                <button className="btn btn-ghost" onClick={() => {
+                  signOut();
+                  toast.success("Logged out successfully!");
+                }}>
                   Logout
                 </button>
               </div>

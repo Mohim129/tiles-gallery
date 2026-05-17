@@ -1,10 +1,11 @@
-// app/my-profile/update-info/page.jsx
+
 "use client";
 
 import { authClient } from "@/lib/auth-client";
 import { Button, Input, Label, TextField, Form } from "@heroui/react";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
+import toast from "react-hot-toast";
 
 const UpdateInfoPage = () => {
   const router = useRouter();
@@ -14,7 +15,6 @@ const UpdateInfoPage = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Fetch current session to pre‑fill the form
   useEffect(() => {
     const getSession = async () => {
       const { data } = await authClient.getSession();
@@ -27,7 +27,6 @@ const UpdateInfoPage = () => {
     getSession();
   }, []);
 
-  // Redirect to signin if not logged in
   if (user === null) {
     return (
       <div className="flex justify-center items-center h-screen">
@@ -54,6 +53,7 @@ const UpdateInfoPage = () => {
       if (updateError) {
         setError(updateError.message || "Update failed. Please try again.");
       } else {
+        toast.success("Profile updated!");
         router.push("/my-profile");
       }
     } catch (err) {
@@ -63,13 +63,15 @@ const UpdateInfoPage = () => {
     }
   };
 
+  
+
   return (
     <div className="min-h-screen bg-base-100 flex items-center justify-center px-4">
       <Form
         className="w-full max-w-[400px] flex flex-col gap-4"
         onSubmit={handleSubmit}
       >
-        <h2 className="text-2xl font-bold text-center text-primary">
+        <h2 className="text-2xl font-bold text-center text-[#6d4fc9]">
           Update Information
         </h2>
 
@@ -113,7 +115,7 @@ const UpdateInfoPage = () => {
         )}
 
         <div className="flex gap-2 justify-center">
-          <Button type="submit" color="primary" disabled={loading}>
+          <Button type="submit" color="#6d4fc9" disabled={loading}>
             {loading ? "Updating..." : "Update Information"}
           </Button>
           <Button

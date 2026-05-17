@@ -1,14 +1,18 @@
+import { getTiles } from "@/lib/tiles";
 import FeaturedTiles from "../component/FeaturedTiles";
 import HeroBanner from "../component/HeroBanner";
 import NewMarquee from "../component/NewMarquee";
 
+const Home = async () => {
+  const tiles = await getTiles();
 
-export default function Home() {
   return (
-    <div className="">
-      <HeroBanner></HeroBanner>
-      <NewMarquee></NewMarquee>
-      <FeaturedTiles></FeaturedTiles>
-    </div>
+    <>
+      <HeroBanner />
+      <NewMarquee tiles={tiles} />
+      <FeaturedTiles />
+    </>
   );
-}
+};
+
+export default Home;

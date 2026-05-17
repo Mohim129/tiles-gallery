@@ -4,7 +4,6 @@ export default function Custom404() {
   return (
     <div className="min-h-[70vh] flex items-center justify-center bg-base-100 px-4">
       <div className="text-center max-w-md mx-auto">
-        {/* Icon / Illustration */}
         <div className="text-8xl mb-6">404</div>
 
         <h1 className="text-5xl font-extrabold text-primary mb-4">404</h1>
